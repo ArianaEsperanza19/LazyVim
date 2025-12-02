@@ -67,7 +67,7 @@ return {
       end, {})
 
       -- Añadir el atajo de teclado para abrir o cerrar Peek
-      vim.api.nvim_set_keymap("n", "<leader>sm", ":lua peek_toggle()<CR>", { noremap = true, silent = true })
+      vim.api.nvim_set_keymap("n", "<leader>pm", ":lua peek_toggle()<CR>", { noremap = true, silent = true })
 
       -- Definir la función para alternar Peek
       _G.peek_toggle = function()
