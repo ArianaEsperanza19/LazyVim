@@ -1,0 +1,11 @@
+{
+"snippet": {
+"prefix": ["snippet"],
+"body": ["\"${1:nombre}\": \n{ ",
+  "\"prefix\": [\"${2:trigger}\"],",
+  "\"body\": [\"${3:codigo}\"],",
+  "\"description\": [\"${4:descripcion}\"]",
+  "}"],
+"description": "A for loop."
+}
+}

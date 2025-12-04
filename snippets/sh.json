@@ -12,7 +12,7 @@
     "prefix": "bashfor",
     "body": [
       "for ((i = 1; i <= ${1:limite}; i++)); do",
-      "\t$2",
+      "  $2",
       "done"
     ],
     "description": "Inserta un bucle for clásico de Bash con contador."
@@ -36,7 +36,7 @@
   "Paréntesis de Expansión Aritmética": {
     "prefix": "paren",
     "body": [
-      "$((${1:expresion}))"
+      "\\$((${1:expresion}))"
     ],
     "description": "Inserta paréntesis de doble expansión aritmética $((...))"
   },
@@ -44,8 +44,8 @@
   "Número Aleatorio en Rango (rand)": {
     "prefix": "rand",
     "body": [
-      "$((${1:a} + RANDOM % (${2:b} - $1 + 1)))"
+      "\\$((${1:a} + \\$RANDOM % (${2:b} - \\$1 + 1)))"
     ],
     "description": "Genera un número entero aleatorio entre A y B (inclusive)."
-  }
+}
 }
