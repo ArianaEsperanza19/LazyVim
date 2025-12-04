@@ -1,0 +1,124 @@
+{
+  "Texto en Negrita": {
+    "prefix": "/n",
+    "body": [
+      "\\textbf{${1:texto}}",
+      "$0"
+    ],
+    "description": "Formato de texto en negrita."
+  },
+  
+  "Texto en Cursiva": {
+    "prefix": "/k",
+    "body": [
+      "\\textit{${1:texto}}",
+      "$0"
+    ],
+    "description": "Formato de texto en cursiva."
+  },
+  
+  "Nota de Pie de Página": {
+    "prefix": "/fp",
+    "body": [
+      "\\footnote{${1:nota}}",
+      "$0"
+    ],
+    "description": "Inserta una nota de pie de página."
+  },
+  
+  "Cita Bibliográfica": {
+    "prefix": "/c",
+    "body": [
+      "\\cite{${1:referencia}}",
+      "$0"
+    ],
+    "description": "Inserta una referencia bibliográfica."
+  },
+  
+  "Metadatos de Documento (Título, Autor, Fecha)": {
+    "prefix": "/tt",
+    "body": [
+      "\\title{${1:titulo}}",
+      "\\author{${2:autor}}",
+      "\\date{${3:fecha}}",
+      "$0"
+    ],
+    "description": "Define el título, autor y fecha del documento."
+  },
+  
+  "Sección": {
+    "prefix": "/sec",
+    "body": [
+      "\\section{${1:Título de la Sección}}",
+      "$0"
+    ],
+    "description": "Inserta una nueva sección."
+  },
+  
+  "Subsección": {
+    "prefix": "/subsec",
+    "body": [
+      "\\subsection{${1:Título de la Subsección}}",
+      "$0"
+    ],
+    "description": "Inserta una nueva subsección."
+  },
+  
+  "Lista Enumerada (enumerate)": {
+    "prefix": "/enum",
+    "body": [
+      "\\begin{enumerate}",
+      "\t\\item ${1:Primer ítem}",
+      "\t\\item ${2:Segundo ítem}",
+      "\t\\item ${3:Tercer ítem}",
+      "\\end{enumerate}",
+      "$0"
+    ],
+    "description": "Inserta un entorno de lista enumerada con tres ítems."
+  },
+  
+  "Lista No Numerada (itemize)": {
+    "prefix": "/item",
+    "body": [
+      "\\begin{itemize}",
+      "\t\\item ${1:Primer ítem}",
+      "\t\\item ${2:Segundo ítem}",
+      "\t\\item ${3:Tercer ítem}",
+      "\\end{itemize}",
+      "$0"
+    ],
+    "description": "Inserta un entorno de lista no numerada con tres ítems."
+  },
+  
+  "Entorno de Tabla Flotante": {
+    "prefix": "/table",
+    "body": [
+      "\\begin{table}[h]",
+      "\t\\centering",
+      "\t\\begin{tabular}{|c|c|c|}",
+      "\t\t\\hline",
+      "\t\t${1:Encabezado 1} & ${2:Encabezado 2} & ${3:Encabezado 3} \\\\ \\hline",
+      "\t\t${4:Dato 1} & ${5:Dato 2} & ${6:Dato 3} \\\\ \\hline",
+      "\t\\end{tabular}",
+      "\t\\caption{${7:Título de la Tabla}}",
+      "\t\\label{tab:${8:etiqueta}}",
+      "\\end{table}",
+      "$0"
+    ],
+    "description": "Inserta un entorno de tabla con caption y label."
+  },
+  
+  "Entorno de Figura Flotante": {
+    "prefix": "/fig",
+    "body": [
+      "\\begin{figure}[h]",
+      "\t\\centering",
+      "\t\\includegraphics[width=\\textwidth]{${1:ruta/de/la/imagen}}",
+      "\t\\caption{${2:Título de la Figura}}",
+      "\t\\label{fig:${3:etiqueta}}",
+      "\\end{figure}",
+      "$0"
+    ],
+    "description": "Inserta un entorno de figura con includegraphics, caption y label."
+  }
+}

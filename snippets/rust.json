@@ -1,0 +1,22 @@
+{
+  "Función Main Principal": {
+    "prefix": "main",
+    "body": [
+      "fn main() {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Inserta la función principal 'fn main() {}'"
+  },
+  
+  "Cabecera de Archivo Rust": {
+    "prefix": "header",
+    "body": [
+      "// Nombre: ${1:nombre}.rs",
+      "// Autor: Ariana Uribe",
+      "// Descripción: ${2:Descripción del archivo}",
+      ""
+    ],
+    "description": "Plantilla de cabecera de archivo con nombre, autor y descripción."
+  }
+}

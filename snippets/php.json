@@ -1,0 +1,82 @@
+{
+  "Bucle For Estándar": {
+    "prefix": "for",
+    "body": [
+      "for ($i = 0; $i < ${1:10}; $i++) {",
+      "\t$0 #codigo...",
+      "}"
+    ],
+    "description": "Inserta un bucle for estándar."
+  },
+  
+  "Bucle Foreach": {
+    "prefix": "foreach",
+    "body": [
+      "foreach (${1:$lista} as ${2:$elemento}) {",
+      "\t$0 #codigo...",
+      "}"
+    ],
+    "description": "Inserta un bucle foreach para iterar sobre un array."
+  },
+  
+  "Bucle While": {
+    "prefix": "while",
+    "body": [
+      "while (${1:$condicion}) {",
+      "\t$0 #codigo...",
+      "}"
+    ],
+    "description": "Inserta un bucle while."
+  },
+  
+  "Bucle Do While": {
+    "prefix": "dowhile",
+    "body": [
+      "do {",
+      "\t$0 #codigo...",
+      "} while (${1:$condicion});"
+    ],
+    "description": "Inserta un bucle do-while."
+  },
+  
+  "Clase con Constructor y Destructor": {
+    "prefix": "clase",
+    "body": [
+      "class ${1:NombreClase} {",
+      "\tprivate $${2:propiedad};",
+      "\tpublic function __construct(${3:$parametro}) {",
+      "\t\t$this->$2 = $3;",
+      "\t}",
+      "\t// Destructor: Este método se llama automáticamente cuando el objeto es destruido.",
+      "\tpublic function __destruct() {",
+      "\t\t// Código del destructor",
+      "\t}",
+      "\tpublic function ${4:metodo}() {",
+      "\t\t// Código del método",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Inserta una estructura de clase PHP con constructor, destructor y un método."
+  },
+  
+  "Clase de Conexión PDO": {
+    "prefix": "pdo",
+    "body": [
+      "class DB {",
+      "\tpublic static function Connect() {",
+      "",
+      "\t\t$conexion = new PDO(\"mysql:host=localhost;dbname=${1:db}\", \"root\", \"\");",
+      "",
+      "\t\t$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);",
+      "",
+      "\t\t$conexion->query(\"SET NAMES 'utf8'\");",
+      "",
+      "\t\treturn $conexion;",
+      "",
+      "\t}",
+      "}"
+    ],
+    "description": "Clase estática para conexión a base de datos usando PDO."
+  }
+}

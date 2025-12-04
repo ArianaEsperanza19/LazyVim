@@ -1,0 +1,136 @@
+{
+  "Documento Base (HTML5)": {
+    "prefix": "doc!",
+    "body": [
+      "<!DOCTYPE html>",
+      "<html>",
+      "<head>",
+      "<meta charset=\"UTF-8\">",
+      "<link rel=\"stylesheet\" href=\"style.css\">",
+      "<title>Document${1}</title>",
+      "</head>",
+      "<body>",
+      "  $0",
+      "</body>",
+      "<script src=\"script.js\"></script>",
+      "</html>"
+    ],
+    "description": "Estructura base de un documento HTML5 con CSS y JS enlazados."
+  },
+  
+  "Barra de Navegación con Búsqueda": {
+    "prefix": "navbarsearch",
+    "body": [
+      "<nav>",
+      "  <form action=\"${1}\" method=\"POST\">",
+      "    <input type=\"text\" name=\"busqueda\">",
+      "    <input type=\"submit\" value=\"Buscar\">",
+      "  </form>",
+      "</nav>",
+      "$0"
+    ],
+    "description": "Barra de navegación con formulario de búsqueda POST."
+  },
+  
+  "Lista Ordenada (OL) de 3 Elementos": {
+    "prefix": "ollist",
+    "body": [
+      "<ol>",
+      "  <li>${1:Elemento 1}</li>",
+      "  <li>${2:Elemento 2}</li>",
+      "  <li>${3:Elemento 3}</li>",
+      "</ol>",
+      "$0"
+    ],
+    "description": "Lista ordenada (numerada) con tres ítems."
+  },
+  
+  "Lista Desordenada (UL) de 3 Elementos": {
+    "prefix": "ullist",
+    "body": [
+      "<ul>",
+      "  <li>${1:Elemento 1}</li>",
+      "  <li>${2:Elemento 2}</li>",
+      "  <li>${3:Elemento 3}</li>",
+      "</ul>",
+      "$0"
+    ],
+    "description": "Lista desordenada con tres ítems."
+  },
+  
+  "Link a CSS Externo": {
+    "prefix": "csslink",
+    "body": [
+      "<link rel=\"stylesheet\" href=\"${1:style.css}\">",
+      "$0"
+    ],
+    "description": "HTML Link a hoja de estilos CSS externa."
+  },
+  
+  "Link a JavaScript Externo": {
+    "prefix": "jslink",
+    "body": [
+      "<script src=\"${1:script.js}\"></script>",
+      "$0"
+    ],
+    "description": "HTML Link a archivo JavaScript externo."
+  },
+  
+  "Div con Clase": {
+    "prefix": "divc",
+    "body": [
+      "<div class=\"${1:clase_nombre}\">",
+      "\t$0",
+      "</div>"
+    ],
+    "description": "HTML Div con atributo class."
+  },
+  
+  "Div con ID": {
+    "prefix": "divid",
+    "body": [
+      "<div id=\"${1:id_nombre}\">",
+      "\t$0",
+      "</div>"
+    ],
+    "description": "HTML Div con atributo id."
+  },
+  
+  "Imagen Responsiva": {
+    "prefix": "imgres",
+    "body": [
+      "<img src=\"assets/${1:imagen}.jpg\" alt=\"${2:Descripción}\" class=\"\">",
+      "$0"
+    ],
+    "description": "Etiqueta <img> para imagen responsiva."
+  },
+  
+  "Formulario Básico": {
+    "prefix": "form",
+    "body": [
+      "<form action=\"${1}\" method=\"${2:POST}\">",
+      "\t$0",
+      "</form>"
+    ],
+    "description": "Estructura básica de un formulario HTML."
+  },
+  
+  "Campo de Input de Texto": {
+    "prefix": "input",
+    "body": [
+      "<label for=\"${1:campo_id}\">${2:Nombre del Campo}:</label>",
+      "<input type=\"text\" id=\"$1\" name=\"$1\" placeholder=\"${3:Ejemplo}\">",
+      "$0"
+    ],
+    "description": "Campo de input de texto con etiqueta y placeholder."
+  },
+  
+  "Botón con Clase de Estilo": {
+    "prefix": "btnstyle",
+    "body": [
+      "<button class=\"btn btn-${1:primary}\">${2:Texto del Botón}</button>",
+      "$0"
+    ],
+    "description": "Botón con clases de estilo (ej. Bootstrap)."
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "Cabecera Bash (bin)": {
+    "prefix": "bin",
+    "body": [
+      "#!/bin/bash",
+      "$0"
+    ],
+    "description": "Inserta la cabecera estándar #!/bin/bash"
+  },
+  
+  "Bucle For de Bash": {
+    "prefix": "bashfor",
+    "body": [
+      "for ((i = 1; i <= ${1:limite}; i++)); do",
+      "\t$2",
+      "done"
+    ],
+    "description": "Inserta un bucle for clásico de Bash con contador."
+  },
+  
+  "Bucle For Doble (anidado)": {
+    "prefix": "bashfor2",
+    "body": [
+      "for i in {1..10}",
+      "do",
+      "    for j in {1..5}",
+      "    do",
+      "        echo \"i: $i, j: $j\"",
+      "    done",
+      "done",
+      "$0"
+    ],
+    "description": "Inserta un bucle for doble con sintaxis 'do...done'."
+  },
+  
+  "Paréntesis de Expansión Aritmética": {
+    "prefix": "paren",
+    "body": [
+      "$((${1:expresion}))"
+    ],
+    "description": "Inserta paréntesis de doble expansión aritmética $((...))"
+  },
+  
+  "Número Aleatorio en Rango (rand)": {
+    "prefix": "rand",
+    "body": [
+      "$((${1:a} + RANDOM % (${2:b} - $1 + 1)))"
+    ],
+    "description": "Genera un número entero aleatorio entre A y B (inclusive)."
+  }
+}

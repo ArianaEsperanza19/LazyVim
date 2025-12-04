@@ -1,0 +1,19 @@
+{
+  "Función Anónima (local)": {
+    "prefix": "fun",
+    "body": [
+      "local function ${1:nombre_funcion}(${2:argumentos})",
+      "\t${3:-- cuerpo de la función}",
+      "end"
+    ],
+    "description": "Inserta una función local de Lua con placeholders."
+  },
+  
+  "Imprimir con formato": {
+    "prefix": "prt",
+    "body": [
+      "print(\"${1:Mensaje}: \" .. ${2:variable})"
+    ],
+    "description": "Imprime un mensaje y una variable."
+  }
+}
