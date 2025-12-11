@@ -7,4 +7,7 @@ vim.defer_fn(function()
   local success_v = pcall(vim.keymap.del, "v", "<leader>K", { silent = true })
 end, 100) -- Retraso de 100ms para asegurar la carga completa
 
+-- Abrir Telescope registers con el atajo <leader>tn
 vim.keymap.set("n", "<leader>tn", "<cmd>Telescope registers<CR>", { noremap = true, silent = true })
+-- Asignar el atajo <leader>wr para ejecutar WinResizerStartResize
+vim.api.nvim_set_keymap("n", "<leader>wr", ":WinResizerStartResize<CR>", { noremap = true, silent = true })
