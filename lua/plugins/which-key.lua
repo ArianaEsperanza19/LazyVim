@@ -92,3 +92,16 @@ return {
     end
   end,
 }
+-- Main
+-- a -> Avante
+-- b -> Buffers
+-- d -> Debug
+-- w -> Windows
+-- s -> Search
+-- n -> Snacks picker (mensajes)
+-- e -> Explorer
+-- g -> Git
+-- t -> Telescope
+-- / -> Grep from dir
+-- c -> Code
+-- p -> Preview
