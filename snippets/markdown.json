@@ -1,0 +1,20 @@
+{
+  "Importar archivo externo": 
+  { 
+    "prefix": ["import"],
+    "body": ["![${1:nombre}](${2:url})"],
+    "description": ["Importar elemento externo"]
+  },
+  "Casilla": 
+  { 
+  "prefix": ["t-item"],
+  "body": ["| ${1:texto} |"],
+  "description": ["Casilla de una tabla"]
+  },
+  "Linea de tabla": 
+  { 
+  "prefix": ["line"],
+  "body": ["| ${1:texto} | ${2:texto} | ${3:texto} |"],
+  "description": ["Linea de tabla con tres casillas"]
+  }
+}
