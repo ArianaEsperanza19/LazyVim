@@ -107,16 +107,16 @@ return {
       end
 
       -- Mapeos para la terminal vanilla
-      vim.api.nvim_set_keymap("n", "<leader>\\", ":lua CMDTerminal()<CR>", { noremap = true, silent = true })
+      vim.api.nvim_set_keymap("n", "<leader>t\\", ":lua CMDTerminal()<CR>", { noremap = true, silent = true })
       vim.api.nvim_set_keymap(
         "n",
-        "<leader>xv",
+        "<leader>tv",
         ":ToggleTerm size=60 dir=~/Desktop direction=vertical name=TerminalVertical<CR>",
         { noremap = true, silent = true }
       )
       vim.api.nvim_set_keymap(
         "n",
-        "<leader>xh",
+        "<leader>th",
         ":ToggleTerm size=15 dir=~/Desktop direction=horizontal name=TerminalHorizontal<CR>",
         { noremap = true, silent = true }
       )
