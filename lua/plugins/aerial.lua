@@ -7,11 +7,10 @@ return {
   {
     "stevearc/aerial.nvim", -- Plugin principal de Aerial
     -- Abrir navegación de Aerial
-    keys = { "<leader>sc" },
+    -- keys = { "<leader>sc" },
     config = function()
       -- Configurar Aerial
       require("aerial").setup({
-        backends = { "lsp", "treesitter", "markdown" }, -- Excluye "php"
         -- Opcionalmente, usar on_attach para establecer keymaps cuando Aerial se adjunta a un buffer
         on_attach = function(bufnr)
           -- Saltar hacia adelante/atrás con '{' y '}'
