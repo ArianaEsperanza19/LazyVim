@@ -30,6 +30,7 @@ return {
         { "<leader>ch", desc = "open Huefy", icon = "" },
         { "<leader>cx", desc = "open Shades", icon = "" },
         { "<leader>su", desc = "undotree", icon = "󰔱" },
+        { "<leader>sc", desc = "content aerial", icon = "󰈙" },
         { "<leader>tc", desc = "comments", icon = "󰒕" },
         { "<leader>tn", desc = "clipboard", icon = "" },
         { "<leader>sna", desc = "messages", icon = "󰍢" },
