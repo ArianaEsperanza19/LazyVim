@@ -19,7 +19,16 @@
     ],
     "description": "Plantilla de cabecera de archivo con nombre, autor y descripción."
   },
-
+  "forString": 
+  { 
+  "prefix": ["forstr"],
+  "body": [
+      "for i in ${1:ini}..${2:end} {",
+      "    println!(\"{}\", ${3:string}.chars().nth(i).unwrap());",
+      "}"
+  ],
+  "description": ["For especial para recorrer caracteres de una cadena de texto."]
+  },
   "Rust Borrowing Rules": {
     "prefix": "rules",
     "body": [
