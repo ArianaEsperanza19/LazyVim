@@ -3,3 +3,4 @@
 -- Add any additional options here
 
 require("filetypes.typ")
+vim.opt.clipboard = "unnamedplus"

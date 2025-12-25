@@ -12,7 +12,10 @@ return {
       "shfmt",
       "rust-analyzer",
       "tinymist",
+      "typstyle",
       "prettier",
+      "intelephense",
+      "marksman",
     },
   },
   ---@param opts MasonSettings | {ensure_installed: string[]}
