@@ -8,7 +8,6 @@
     ],
     "description": "Inserta la función principal 'fn main() {}'"
   },
-  
   "Cabecera de Archivo Rust": {
     "prefix": "header",
     "body": [
@@ -19,73 +18,104 @@
     ],
     "description": "Plantilla de cabecera de archivo con nombre, autor y descripción."
   },
-  "forString": 
-  { 
-  "prefix": ["forstr"],
-  "body": [
+  "forString": {
+    "prefix": [
+      "forstr"
+    ],
+    "body": [
       "for i in ${1:ini}..${2:end} {",
       "    println!(\"{}\", ${3:string}.chars().nth(i).unwrap());",
       "}"
-  ],
-  "description": ["For especial para recorrer caracteres de una cadena de texto."]
+    ],
+    "description": [
+      "For especial para recorrer caracteres de una cadena de texto."
+    ]
   },
   "Rust Borrowing Rules": {
     "prefix": "rules",
     "body": [
-        "/* ",
-        "#########################################################################",
-        "#                               REGLAS DE RUST: PROPIEDAD Y PRÉSTAMO",
-        "#########################################################################",
-        "",
-        "// I. PROPIEDAD (OWNERSHIP)",
-        "// Define quién es responsable de la memoria (el Garbage Collector de Rust).",
-        "",
-        "// 1. Cada valor tiene un propietario (Owner).",
-        "// 2. Solo puede haber UN propietario a la vez.",
-        "// 3. Cuando el propietario sale del ámbito (scope), el valor se elimina (drop).",
-        "",
-        "// CONSECUENCIA CLAVE: MOVIMIENTO (MOVE)",
-        "// - Pasar un tipo sin Copy (String, Vec) transfiere la propiedad e invalida el original.",
-        "// - Solo los tipos con Copy (i32, f64, bool) se copian.",
-        "",
-        "// -----------------------------------------------------------------------",
-        "",
-        "// II. PRÉSTAMO (BORROWING)",
-        "// Permite usar un valor sin tomar su propiedad (pasando referencias).",
-        "",
-        "// 📜 REGLA DE EXCLUSIVIDAD (CERO O UNO)",
-        "// Solo puedes tener UNO de los siguientes préstamos activos en un momento:",
-        "",
-        "// 1. CUALQUIER número de Referencias Inmutables (&T)",
-        "//    - Uso: Solo LECTURA.",
-        "//    - Ventaja: Permite múltiples lectores simultáneamente.",
-        "",
-        "// 2. UNA y solo UNA Referencia Mutable (&mut T)",
-        "//    - Uso: LECTURA y ESCRITURA (Mutación).",
-        "//    - Ventaja: Garantiza Exclusividad Mutua para escribir (nadie más puede leer ni escribir).",
-        "",
-        "// ⚠️ REGLA DE ORO",
-        "// Nunca puedes tener una referencia &T y una &mut T activas al mismo tiempo.",
-        "",
-        "// ⏱️ LIFETIME (Tiempo de Vida)",
-        "// El compilador garantiza que una referencia (el préstamo) nunca viva más que el valor original (el propietario). ",
-        "// Esto previene referencias a memoria ya liberada (Dangling References).",
-        "",
-        "// -----------------------------------------------------------------------",
-        "",
-        "// III. DESREFERENCIACIÓN (El operador *)",
-        "",
-        "// 💡 LECTURA (Deref Coercion)",
-        "// Para leer, Rust a menudo aplica el * implícitamente:",
-        "// let valor = referencia + 5; // Rust lo convierte en (*referencia) + 5;",
-        "",
-        "// ✍️ ESCRITURA (Mutación)",
-        "// Para escribir o mutar a través de una referencia mutable, el * es OBLIGATORIO:",
-        "// *referencia_mutable = 10;",
-        "*/",
-        "",
-        "$0" 
+      "/* ",
+      "#########################################################################",
+      "#                               REGLAS DE RUST: PROPIEDAD Y PRÉSTAMO",
+      "#########################################################################",
+      "",
+      "// I. PROPIEDAD (OWNERSHIP)",
+      "// Define quién es responsable de la memoria (el Garbage Collector de Rust).",
+      "",
+      "// 1. Cada valor tiene un propietario (Owner).",
+      "// 2. Solo puede haber UN propietario a la vez.",
+      "// 3. Cuando el propietario sale del ámbito (scope), el valor se elimina (drop).",
+      "",
+      "// CONSECUENCIA CLAVE: MOVIMIENTO (MOVE)",
+      "// - Pasar un tipo sin Copy (String, Vec) transfiere la propiedad e invalida el original.",
+      "// - Solo los tipos con Copy (i32, f64, bool) se copian.",
+      "",
+      "// -----------------------------------------------------------------------",
+      "",
+      "// II. PRÉSTAMO (BORROWING)",
+      "// Permite usar un valor sin tomar su propiedad (pasando referencias).",
+      "",
+      "// 📜 REGLA DE EXCLUSIVIDAD (CERO O UNO)",
+      "// Solo puedes tener UNO de los siguientes préstamos activos en un momento:",
+      "",
+      "// 1. CUALQUIER número de Referencias Inmutables (&T)",
+      "//    - Uso: Solo LECTURA.",
+      "//    - Ventaja: Permite múltiples lectores simultáneamente.",
+      "",
+      "// 2. UNA y solo UNA Referencia Mutable (&mut T)",
+      "//    - Uso: LECTURA y ESCRITURA (Mutación).",
+      "//    - Ventaja: Garantiza Exclusividad Mutua para escribir (nadie más puede leer ni escribir).",
+      "",
+      "// ⚠️ REGLA DE ORO",
+      "// Nunca puedes tener una referencia &T y una &mut T activas al mismo tiempo.",
+      "",
+      "// ⏱️ LIFETIME (Tiempo de Vida)",
+      "// El compilador garantiza que una referencia (el préstamo) nunca viva más que el valor original (el propietario). ",
+      "// Esto previene referencias a memoria ya liberada (Dangling References).",
+      "",
+      "// -----------------------------------------------------------------------",
+      "",
+      "// III. DESREFERENCIACIÓN (El operador *)",
+      "",
+      "// 💡 LECTURA (Deref Coercion)",
+      "// Para leer, Rust a menudo aplica el * implícitamente:",
+      "// let valor = referencia + 5; // Rust lo convierte en (*referencia) + 5;",
+      "",
+      "// ✍️ ESCRITURA (Mutación)",
+      "// Para escribir o mutar a través de una referencia mutable, el * es OBLIGATORIO:",
+      "// *referencia_mutable = 10;",
+      "*/",
+      "",
+      "$0"
     ],
     "description": "Inserta las reglas de Propiedad y Préstamo de Rust."
+  },
+  "Match exception": {
+    "prefix": [
+      "matchEx"
+    ],
+    "body": [
+      "match ${1:dato} {",
+      "Ok(${2:input}) => { ${3:codigo...} }",
+      "Err(e) => { ${4:error... } }",
+      "}"
+    ],
+    "description": [
+      "match para excepciones."
+    ]
+  },
+  "Match Some": {
+    "prefix": [
+      "matchSom"
+    ],
+    "body": [
+      "match ${1:dato} {",
+      "Some(${2:input}) => { ${3:codigo...} }",
+      "None(e) => { ${4:Nada... } }",
+      "}"
+    ],
+    "description": [
+      "match para verificar existencia."
+    ]
   }
 }
