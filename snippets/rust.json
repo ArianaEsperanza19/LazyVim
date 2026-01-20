@@ -117,5 +117,16 @@
     "description": [
       "match para verificar existencia."
     ]
+  },
+  "Cabecera de Rust-Script": {
+    "prefix": [
+      "script"
+    ],
+    "body": [
+      "#!/usr/bin/env rust-scriptrigger"
+    ],
+    "description": [
+      "Cabecera para Rust Script"
+    ]
   }
 }
