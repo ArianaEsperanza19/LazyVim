@@ -128,5 +128,33 @@
     "description": [
       "Cabecera para Rust Script"
     ]
+  },
+  "Linea de comando basica": {
+    "prefix": [
+      "commandb"
+    ],
+    "body": [
+      "let ${1:var} = Command::new(\"${2:comando}\")",
+      "    .arg(\"${3:argumento}\")",
+      "    .status()",
+      "    .expect(\"Falló al ejecutar el comando\");"
+    ],
+    "description": [
+      "Comando basico de terminal que indica si fue exitoso o no."
+    ]
+  },
+  "Linea de comandos con output": {
+    "prefix": [
+      "commandOutput"
+    ],
+    "body": [
+      "let ${1:var} = Command::new(\"${2:comando}\")",
+      "    .arg(\"${3:argumento}\")",
+      "    .output()",
+      "    .expect(\"Falló al ejecutar el comando\");"
+    ],
+    "description": [
+      "Linea de comandos que captura la salida"
+    ]
   }
 }
