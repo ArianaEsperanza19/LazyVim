@@ -65,6 +65,9 @@ return {
         elseif file_extension == ".py" then
           -- Si es un archivo .py, ejecutarlo con python
           cmd = string.format("python %s", file_path)
+        elseif file_extension == ".ag" then
+          -- Si es un archivo .py, ejecutarlo con python
+          cmd = string.format("aguila %s", file_path)
         else
           -- Para otros tipos de archivos, simplemente mostrar un mensaje
           vim.notify("Formato de archivo no soportado", vim.log.levels.WARN)

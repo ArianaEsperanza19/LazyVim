@@ -1,5 +1,4 @@
 --INFO: Avante is a plugin for Neovim that integrates AI-powered code assistance and chat functionality directly
---into the editor.
 -- Matar proceso
 -- sudo pkill -9 ollama
 return {
