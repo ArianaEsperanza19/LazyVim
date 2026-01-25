@@ -22,23 +22,6 @@ vim.api.nvim_set_keymap("n", "<leader>wq", ":only<CR>", { noremap = true, silent
 -- Cerrar buffer actual con todo
 vim.api.nvim_set_keymap("n", "<leader><Del>", ":windo bd<CR>", { noremap = true, silent = true })
 
--- La letra ñ en el teclado
-vim.api.nvim_set_keymap("i", "<A-n>", "ñ", { noremap = true, silent = true })
--- Mapas para vocales acentuadas en modo inserción
-vim.api.nvim_set_keymap("i", "<A-a>", "á", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<A-S-a>", "Á", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<A-e>", "é", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<A-S-e>", "É", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<A-i>", "í", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<A-S-i>", "Í", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<A-o>", "ó", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<A-S-o>", "Ó", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<C-u>", "ü", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<A-u>", "ú", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<A-S-u>", "Ú", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<C-e>", "ĕ", { noremap = true, silent = true })
--- Mapeo para Control + / para insertar '¿'
--- vim.api.nvim_set_keymap("i", "<C-i>", "¿", { noremap = true, silent = true })
 -- Crear una nueva línea debajo de la línea actual sin cambiar de modo
 vim.api.nvim_set_keymap("n", "<leader>o", "o<Esc>", { noremap = true, silent = true })
 -- Crear una nueva línea encima de la línea actual sin cambiar de modo
@@ -56,6 +39,9 @@ vim.api.nvim_set_keymap("n", "<C-k>", "gk", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "zj", ":bprevious<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "zk", ":bnext<CR>", { noremap = true, silent = true })
 
+-- Guion largo
+vim.keymap.set("i", ",-", "—", { noremap = true, silent = true })
+
 -- Aliases
 local map = vim.api.nvim_set_keymap
 local default_opt = { noremap = true, silent = true }
@@ -67,3 +53,5 @@ map("", "<left>", "<nop>", { noremap = true })
 map("", "<right>", "<nop>", { noremap = true })
 
 require("config.plugins_maps")
+require("config.es")
+require("config.eo")

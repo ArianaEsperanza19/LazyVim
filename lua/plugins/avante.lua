@@ -1,33 +1,30 @@
 --INFO: Avante is a plugin for Neovim that integrates AI-powered code assistance and chat functionality directly
 --into the editor.
+-- Matar proceso
+-- sudo pkill -9 ollama
 return {
   "yetone/avante.nvim",
   build = vim.fn.has("win32") ~= 0 and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
     or "make",
   event = "VeryLazy",
   opts = {
-    -- 1. CAMBIO CLAVE: El proveedor ahora es "ollama" directamente
     provider = "ollama",
-
+    auto_suggestions_provider = "ollama",
+    input = { enabled = true },
     providers = {
       ollama = {
-        -- 2. IMPORTANTE: Sin "/v1" al final
-        endpoint = "http://127.0.0.1:11434",
-        model = "qwen2.5-coder",
-        -- Parámetros recomendados para evitar bucles
-        extra_request_body = {
-          options = {
-            temperature = 0.2,
-            num_predict = 1024, -- Límite de tokens para que no genere infinito
-          },
-        },
+        __inherited_from = "openai",
+        endpoint = "http://127.0.0.1:11434/v1",
+        model = "llama3.2",
+        timeout = 30000,
+        temperature = 0.2,
+        max_tokens = 4096,
       },
     },
-
-    selection = {
-      hint_display = "none",
-    },
+    -- Esto es vital para que no se sature la UI
     behaviour = {
+      auto_suggestions = false, -- Desactiva si notas lag al escribir
+      auto_set_highlight_group = true,
       auto_set_keymaps = false,
       auto_apply_diff_after_generation = false,
       support_paste_from_clipboard = false,

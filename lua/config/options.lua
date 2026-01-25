@@ -3,4 +3,5 @@
 -- Add any additional options here
 
 require("filetypes.types")
+require("config.neovide")
 vim.opt.clipboard = "unnamedplus"
