@@ -2,8 +2,10 @@
   "Función Main Principal": {
     "prefix": "main",
     "body": [
+      "// ${1:Titulo}",
+      "use std::io::{self, Write};",
       "fn main() {",
-      "\t$0",
+      "\t$2",
       "}"
     ],
     "description": "Inserta la función principal 'fn main() {}'"
@@ -116,6 +118,58 @@
     ],
     "description": [
       "match para verificar existencia."
+    ]
+  },
+  "Forrange": {
+    "prefix": [
+      "forrang"
+    ],
+    "body": [
+      "for ${1:i} in ${2:0}..${3:n} {",
+      "${4:// Codigo..}",
+      "}"
+    ],
+    "description": [
+      "For clasico desde i hasta n"
+    ]
+  },
+  "Funcion de Struct": {
+    "prefix": [
+      "impl"
+    ],
+    "body": [
+      "impl ${1:nombre de su estructura asociada.} {",
+      "fn ${2:Nombre}(${3:&self}) -> ${4:Tipo a devolver} {",
+      "${5:Codigo...}",
+      "}",
+      "}"
+    ],
+    "description": [
+      "Implementación de función asociada a un Struct."
+    ]
+  },
+  "Funcion input": {
+    "prefix": [
+      "finput"
+    ],
+    "body": [
+      "fn input () -> ${1:Tipo de salida} {",
+      "loop {",
+      "let mut input = String::new();",
+      "let _ = io::stdin().read_line(&mut input); // <- Recibe los datos mediante la ref mutable.",
+      "let n = input.trim(); // <- Los limpia",
+      "match n.parse::<${1:Tipo de salida}>() // <- Los convierte al tipo necesario",
+      "{",
+      "// Comprueba los errores",
+      "Ok( n ) => break n,",
+      "Err( error ) => {",
+      "println!(\"{error}\");",
+      "println!(\"${2:Mensaje de error}\");",
+      "},",
+      "}}}"
+    ],
+    "description": [
+      "Funcion para ingresar datos"
     ]
   },
   "Cabecera de Rust-Script": {

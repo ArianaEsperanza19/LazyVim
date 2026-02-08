@@ -47,6 +47,10 @@ return {
           -- Si es un archivo .rs, compilar y ejecutar con rustc
           local file_name = vim.fn.fnamemodify(file_path, ":r")
           cmd = string.format("rustc %s -o %s && %s", file_path, file_name, file_name)
+        elseif file_extension == ".rst" then
+          -- Si es un archivo .rs, compilar y ejecutar con rustc
+          local file_name = vim.fn.fnamemodify(file_path, ":r")
+          cmd = string.format("rust-script %s -o %s", file_path, file_name, file_name)
         elseif file_extension == ".php" then
           -- Si es un archivo .php, ejecutarlo con el intérprete de php
           cmd = string.format("php %s", file_path)

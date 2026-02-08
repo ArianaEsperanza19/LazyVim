@@ -53,5 +53,5 @@ map("", "<left>", "<nop>", { noremap = true })
 map("", "<right>", "<nop>", { noremap = true })
 
 require("config.plugins_maps")
-require("config.es")
-require("config.eo")
+require("config.maps.es")
+require("config.maps.eo")
