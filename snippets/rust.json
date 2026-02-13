@@ -92,13 +92,24 @@
     ],
     "description": "Inserta las reglas de Propiedad y Préstamo de Rust."
   },
+  "String": {
+    "prefix": [
+      "string"
+    ],
+    "body": [
+      "String::from(\"${1:Texto}\");"
+    ],
+    "description": [
+      "Crear una nueva cadena de texto."
+    ]
+  },
   "Match exception": {
     "prefix": [
       "matchEx"
     ],
     "body": [
       "match ${1:dato} {",
-      "Ok(${2:input}) => { ${3:codigo...} }",
+      "Ok(${2:input}) => { ${3:// codigo...} }",
       "Err(e) => { ${4:error... } }",
       "}"
     ],
@@ -140,12 +151,26 @@
     "body": [
       "impl ${1:nombre de su estructura asociada.} {",
       "fn ${2:Nombre}(${3:&self}) -> ${4:Tipo a devolver} {",
-      "${5:Codigo...}",
+      "${5:// Codigo...}",
       "}",
       "}"
     ],
     "description": [
       "Implementación de función asociada a un Struct."
+    ]
+  },
+  "Declaracion de Enums": {
+    "prefix": [
+      "enum"
+    ],
+    "body": [
+      "#[derive(Debug, PartialEq, Clone, Copy)]",
+      "enum ${1:nombre} { ",
+      "${2:dato}: ${3:variable}",
+      "}"
+    ],
+    "description": [
+      "Declaración completa de un enum."
     ]
   },
   "Funcion input": {
@@ -209,6 +234,35 @@
     ],
     "description": [
       "Linea de comandos que captura la salida"
+    ]
+  },
+  "Macro Rust Quick Print (No Newline)": {
+    "prefix": [
+      "myprint_macro"
+    ],
+    "body": [
+      "use std::io::{self, Write};",
+      "macro_rules! my_print {",
+      "    (\\$(\\$arg:tt)*) => {",
+      "        print!(\\$(\\$arg)*);",
+      "        io::stdout().flush().expect(\"Fallo al vaciar el búfer\");",
+      "    };",
+      "}",
+      "$0"
+    ],
+    "description": [
+      "Macro para imprimir sin salto de línea y forzar el flush inmediatamente."
+    ]
+  },
+  "Just Impression (No Newline)": {
+    "prefix": [
+      "my_print"
+    ],
+    "body": [
+      "my_print!(\"${1:Texto}\");"
+    ],
+    "description": [
+      "descripcion"
     ]
   }
 }
