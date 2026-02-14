@@ -1,4 +1,4 @@
--- Escritura improvisada
+-- -- Escritura improvisada
 vim.keymap.set("i", "cx", "ĉ", { noremap = true, silent = true })
 vim.keymap.set("i", "gx", "ĝ", { noremap = true, silent = true })
 vim.keymap.set("i", "hx", "ĥ", { noremap = true, silent = true })
@@ -15,68 +15,158 @@ vim.keymap.set("i", "Sx", "Ŝ", { noremap = true, silent = true })
 
 -- La E breve
 vim.api.nvim_set_keymap("i", "<C-e>", "ĕ", { noremap = true, silent = true })
--- Vocales Áureas (Escribes .a y se convierte en ā)
-vim.keymap.set("i", ";a", "ā", { noremap = true, silent = true })
-vim.keymap.set("i", ";A", "Ā", { noremap = true, silent = true })
-vim.keymap.set("i", ";e", "ē", { noremap = true, silent = true })
-vim.keymap.set("i", ";E", "Ē", { noremap = true, silent = true })
-vim.keymap.set("i", ";i", "ī", { noremap = true, silent = true })
-vim.keymap.set("i", ";I", "Ī", { noremap = true, silent = true })
-vim.keymap.set("i", ";o", "ō", { noremap = true, silent = true })
-vim.keymap.set("i", ";O", "Ō", { noremap = true, silent = true })
-vim.keymap.set("i", ";u", "ū", { noremap = true, silent = true })
-vim.keymap.set("i", ";U", "Ū", { noremap = true, silent = true })
 
--- Consonantes Áureas (Letra + Macron) - Minúsculas
-vim.keymap.set("i", ";b", "b̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";c", "c̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";d", "d̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";f", "f̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";g", "ḡ", { noremap = true, silent = true })
-vim.keymap.set("i", ";h", "h̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";j", "j̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";k", "k̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";l", "l̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";m", "m̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";n", "n̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";p", "p̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";r", "r̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";s", "s̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";t", "t̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";v", "v̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";z", "z̄", { noremap = true, silent = true })
+-- Mapeos estandar
+-- -- Vocales Áureas (Escribes .a y se convierte en ā)
+-- vim.keymap.set("i", ";a", "ā", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";A", "Ā", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";e", "ē", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";E", "Ē", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";i", "ī", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";I", "Ī", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";o", "ō", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";O", "Ō", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";u", "ū", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";U", "Ū", { noremap = true, silent = true })
+--
+-- -- Consonantes Áureas (Letra + Macron) - Minúsculas
+-- vim.keymap.set("i", ";b", "b̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";c", "c̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";d", "d̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";f", "f̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";g", "ḡ", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";h", "h̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";j", "j̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";k", "k̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";l", "l̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";m", "m̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";n", "n̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";p", "p̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";r", "r̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";s", "s̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";t", "t̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";v", "v̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";z", "z̄", { noremap = true, silent = true })
+--
+-- -- Consonantes Áureas (Letra + Macron) - Mayúsculas
+-- vim.keymap.set("i", ";B", "B̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";C", "C̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";D", "D̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";F", "F̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";G", "Ḡ", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";H", "H̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";J", "J̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";K", "K̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";L", "L̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";M", "M̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";N", "N̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";P", "P̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";R", "R̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";S", "S̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";T", "T̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";V", "V̄", { noremap = true, silent = true })
+-- vim.keymap.set("i", ";Z", "Z̄", { noremap = true, silent = true })
+--
+-- -- Letras con Sombrero y Macrón Inferior (Versión Larga) - Minúsculas
+-- vim.keymap.set("i", ",c", "ĉ̱", { noremap = true, silent = true })
+-- vim.keymap.set("i", ",g", "ĝ̱", { noremap = true, silent = true })
+-- vim.keymap.set("i", ",h", "ẖ̂", { noremap = true, silent = true })
+-- vim.keymap.set("i", ",j", "ĵ̱", { noremap = true, silent = true })
+-- vim.keymap.set("i", ",s", "ŝ̱", { noremap = true, silent = true })
+-- vim.keymap.set("i", ",u", "ŭ̱", { noremap = true, silent = true })
+--
+-- -- Letras con Sombrero y Macrón Inferior (Versión Larga) - Mayúsculas
+-- vim.keymap.set("i", ",C", "Ĉ̱", { noremap = true, silent = true })
+-- vim.keymap.set("i", ",G", "Ĝ̱", { noremap = true, silent = true })
+-- vim.keymap.set("i", ",H", "Ĥ̱", { noremap = true, silent = true })
+-- vim.keymap.set("i", ",J", "Ĵ̱", { noremap = true, silent = true })
+-- vim.keymap.set("i", ",S", "Ŝ̱", { noremap = true, silent = true })
+-- vim.keymap.set("i", ",U", "Ŭ̱", { noremap = true, silent = true })
 
--- Consonantes Áureas (Letra + Macron) - Mayúsculas
-vim.keymap.set("i", ";B", "B̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";C", "C̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";D", "D̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";F", "F̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";G", "Ḡ", { noremap = true, silent = true })
-vim.keymap.set("i", ";H", "H̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";J", "J̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";K", "K̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";L", "L̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";M", "M̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";N", "N̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";P", "P̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";R", "R̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";S", "S̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";T", "T̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";V", "V̄", { noremap = true, silent = true })
-vim.keymap.set("i", ";Z", "Z̄", { noremap = true, silent = true })
+-- Mapeo inteligente, solo para modo zen
+local M = {}
 
--- Letras con Sombrero y Macrón Inferior (Versión Larga) - Minúsculas
-vim.keymap.set("i", ",c", "ĉ̱", { noremap = true, silent = true })
-vim.keymap.set("i", ",g", "ĝ̱", { noremap = true, silent = true })
-vim.keymap.set("i", ",h", "ẖ̂", { noremap = true, silent = true })
-vim.keymap.set("i", ",j", "ĵ̱", { noremap = true, silent = true })
-vim.keymap.set("i", ",s", "ŝ̱", { noremap = true, silent = true })
-vim.keymap.set("i", ",u", "ŭ̱", { noremap = true, silent = true })
+-- Definimos los mapas en una tabla para no repetir código
+-- Patrón: { modo, trigger, resultado }
+local esperanto_maps = {
+  -- Vocales Áureas
+  { "i", ";a", "ā" },
+  { "i", ";A", "Ā" },
+  { "i", ";e", "ē" },
+  { "i", ";E", "Ē" },
+  { "i", ";i", "ī" },
+  { "i", ";I", "Ī" },
+  { "i", ";o", "ō" },
+  { "i", ";O", "Ō" },
+  { "i", ";u", "ū" },
+  { "i", ";U", "Ū" },
 
--- Letras con Sombrero y Macrón Inferior (Versión Larga) - Mayúsculas
-vim.keymap.set("i", ",C", "Ĉ̱", { noremap = true, silent = true })
-vim.keymap.set("i", ",G", "Ĝ̱", { noremap = true, silent = true })
-vim.keymap.set("i", ",H", "Ĥ̱", { noremap = true, silent = true })
-vim.keymap.set("i", ",J", "Ĵ̱", { noremap = true, silent = true })
-vim.keymap.set("i", ",S", "Ŝ̱", { noremap = true, silent = true })
-vim.keymap.set("i", ",U", "Ŭ̱", { noremap = true, silent = true })
+  -- Consonantes Áureas (Letra + Macron) - Minúsculas
+  { "i", ";b", "b̄" },
+  { "i", ";c", "c̄" },
+  { "i", ";d", "d̄" },
+  { "i", ";f", "f̄" },
+  { "i", ";g", "ḡ" },
+  { "i", ";h", "h̄" },
+  { "i", ";j", "j̄" },
+  { "i", ";k", "k̄" },
+  { "i", ";l", "l̄" },
+  { "i", ";m", "m̄" },
+  { "i", ";n", "n̄" },
+  { "i", ";p", "p̄" },
+  { "i", ";r", "r̄" },
+  { "i", ";s", "s̄" },
+  { "i", ";t", "t̄" },
+  { "i", ";v", "v̄" },
+  { "i", ";z", "z̄" },
+
+  -- Consonantes Áureas (Letra + Macron) - Mayúsculas
+  { "i", ";B", "B̄" },
+  { "i", ";C", "C̄" },
+  { "i", ";D", "D̄" },
+  { "i", ";F", "F̄" },
+  { "i", ";G", "Ḡ" },
+  { "i", ";H", "H̄" },
+  { "i", ";J", "J̄" },
+  { "i", ";K", "K̄" },
+  { "i", ";L", "L̄" },
+  { "i", ";M", "M̄" },
+  { "i", ";N", "N̄" },
+  { "i", ";P", "P̄" },
+  { "i", ";R", "R̄" },
+  { "i", ";S", "S̄" },
+  { "i", ";T", "T̄" },
+  { "i", ";V", "V̄" },
+  { "i", ";Z", "Z̄" },
+
+  -- Letras con Sombrero y Macrón Inferior - Minúsculas
+  { "i", ",c", "ĉ̱" },
+  { "i", ",g", "ĝ̱" },
+  { "i", ",h", "ẖ̂" },
+  { "i", ",j", "ĵ̱" },
+  { "i", ",s", "ŝ̱" },
+  { "i", ",u", "ŭ̱" },
+
+  -- Letras con Sombrero y Macrón Inferior - Mayúsculas
+  { "i", ",C", "Ĉ̱" },
+  { "i", ",G", "Ĝ̱" },
+  { "i", ",H", "Ĥ̱" },
+  { "i", ",J", "Ĵ̱" },
+  { "i", ",S", "Ŝ̱" },
+  { "i", ",U", "Ŭ̱" },
+}
+
+function M.enable_esperanto()
+  for _, map in ipairs(esperanto_maps) do
+    vim.keymap.set(map[1], map[2], map[3], { noremap = true, silent = true, buffer = 0 })
+  end
+end
+
+function M.disable_esperanto()
+  for _, map in ipairs(esperanto_maps) do
+    -- Usamos pcall para evitar errores si el mapa ya fue borrado
+    pcall(vim.keymap.del, map[1], map[2], { buffer = 0 })
+  end
+end
+
+return M

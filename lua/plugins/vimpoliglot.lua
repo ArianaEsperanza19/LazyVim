@@ -18,7 +18,6 @@ return {
       local function ChangeSpellLang(lang)
         vim.opt_local.spelllang = lang
       end
-
       -- Comandos personalizados para cambiar el idioma de corrección ortográfica
       vim.api.nvim_create_user_command("SpellLangEn", function()
         ChangeSpellLang("en")
