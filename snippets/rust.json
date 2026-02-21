@@ -166,7 +166,7 @@
     "body": [
       "#[derive(Debug, PartialEq, Clone, Copy)]",
       "enum ${1:nombre} { ",
-      "${2:dato}: ${3:variable}",
+      "${2:dato}(${3:variable}),",
       "}"
     ],
     "description": [
