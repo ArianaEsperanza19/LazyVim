@@ -124,7 +124,7 @@
     "body": [
       "match ${1:dato} {",
       "Some(${2:input}) => { ${3:codigo...} }",
-      "None(e) => { ${4:Nada... } }",
+      "None => { ${4:Nada... } }",
       "}"
     ],
     "description": [

@@ -6,33 +6,60 @@ return {
     event = "VeryLazy", -- Cargar el plugin de manera diferida
     config = function()
       -- Configuración principal de nvim-surround
+
+      vim.g.nvim_surround_no_normal_mappings = true
+      vim.keymap.set("n", "]n", "<Plug>(nvim-surround-normal)", {
+        desc = "Add a surrounding pair around a motion (normal mode)",
+      })
+      vim.keymap.set("x", "]v", "<Plug>(nvim-surround-visual)", {
+        desc = "Add a surrounding pair around a motion (visual selection)",
+      })
+      vim.keymap.set("x", "]V", "<Plug>(nvim-surround-visual-line)", {
+        desc = "Add a surrounding pair around a visual selection, on new lines",
+      })
+      vim.keymap.set("n", "]x", "<Plug>(nvim-surround-delete)", {
+        desc = "Delete a surrounding pair",
+      })
+      vim.keymap.set("n", "]/", "<Plug>(nvim-surround-change)", {
+        desc = "Change a surrounding pair",
+      })
       require("nvim-surround").setup({
-        -- Keymaps personalizados
-        keymaps = {
-          insert = false, -- Modo Insert: <C-g>s (desactivado)
-          insert_line = false, -- Modo Insert (línea): <C-g>S (desactivado)
-          normal_line = "]n", -- Modo normal -> ]n + lineas + direccion
-          normal_cur = "]y", -- Modo Normal (línea actual): yss
-          normal_cur_line = "]Y", -- Modo Normal (línea actual): ySS
-          visual = "]v", -- Modo Visual: S
-          visual_line = "]V", -- Modo Visual (línea): gS
-          delete = "]x", -- Eliminar surrounding en modo normal
-          change = "]/", -- Cambiar surrounding en modo normal
-        },
         surrounds = {
-          -- Surroundings personalizados
-          ["("] = { "( ", " )" }, -- Paréntesis con espacio
-          [")"] = { "(", ")" }, -- Paréntesis sin espacio
-          ["{"] = { "{ ", " }" }, -- Llaves con espacio
-          ["}"] = { "{", "}" }, -- Llaves sin espacio
-          ["<"] = { "< ", " >" }, -- Ángulos con espacio
-          [">"] = { "<", ">" }, -- Ángulos sin espacio
-          ["["] = { "[ ", " ]" }, -- Corchetes con espacio
-          ["]"] = { "[", "]" }, -- Corchetes sin espacio
-          ['"'] = { '"', '"' }, -- Comillas dobles
-          ["'"] = { "'", "'" }, -- Comillas simples
-          ["`"] = { "`", "`" }, -- Acentos graves
-          -- Triples de comillas
+          ["("] = {
+            add = function()
+              return { { "(" }, { ")" } }
+            end,
+          },
+          ["["] = {
+            add = function()
+              return { { "[" }, { "]" } }
+            end,
+          },
+          ["{"] = {
+            aliasesdd = function()
+              return { { "{" }, { "}" } }
+            end,
+          },
+          ["<"] = {
+            aliasesdd = function()
+              return { { "<" }, { ">" } }
+            end,
+          },
+          ['"'] = {
+            aliasesdd = function()
+              return { { '"' }, { '"' } }
+            end,
+          },
+          ["'"] = {
+            aliasesdd = function()
+              return { { "'" }, { "'" } }
+            end,
+          },
+          ["`"] = {
+            aliasesdd = function()
+              return { { "`" }, { "`" } }
+            end,
+          },
           ["$"] = {
             add = function()
               return { "```", "```" }
@@ -80,6 +107,14 @@ return {
               return { "¡", "!" }
             end,
           },
+        },
+        aliases = {
+          -- ["a"] = ">",
+          -- ["b"] = ")",
+          -- ["B"] = "}",
+          -- ["r"] = "]",
+          -- ["q"] = { '"', "'", "`" },
+          -- ["s"] = { "}", "]", ")", ">", '"', "'", "`" },
         },
       })
     end,
