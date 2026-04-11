@@ -60,7 +60,7 @@ return {
               return { { "`" }, { "`" } }
             end,
           },
-          ["$"] = {
+          ["@"] = {
             add = function()
               return { "```", "```" }
             end,

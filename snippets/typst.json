@@ -1,0 +1,226 @@
+{
+    "Plantilla de Documento Completa": {
+        "prefix": "docinit",
+        "body": [
+            "#set page(",
+            "\tpaper: \"${1:a4}\",",
+            "\tmargin: (x: ${2:2.5cm}, y: ${3:2.5cm}),",
+            "\tnumbering: \"1\",",
+            ")",
+            "#set text(",
+            "\tfont: ${4:Cormorant Garamont},",
+            "\tlang: \"es\",",
+            "\tsize: ${5:11pt}",
+            ")",
+            "#set par(justify: true)",
+            "",
+            "#align(center)[",
+            "\t#text(size: 2em, weight: \"bold\")[${6:Título del Documento}] \\",
+            "\t#text(size: 1.2em)[${7:Autor}]",
+            "]",
+            "",
+            "$0"
+        ],
+        "description": "Configuración inicial completa para un documento nuevo"
+    },
+    "Alinear al Centro": {
+        "prefix": "alc",
+        "body": [
+            "#align(center)[",
+            "\t$0",
+            "]"
+        ],
+        "description": "Crea un bloque alineado al centro rápidamente"
+    },
+    "Alinear al Centro con Texto": {
+        "prefix": "alct",
+        "body": [
+            "#align(center)[#text(size: ${1:11pt}, weight: \"${2:bold}\")[$0]]"
+        ],
+        "description": "Centra texto con tamaño y peso ajustable"
+    },
+    "Configuración de Texto Básica": {
+        "prefix": "txt",
+        "body": [
+            "#text(font: \"${1:Linux Libertine}\", size: ${2:11pt}, fill: ${3:black})[${0}]"
+        ],
+        "description": "Inserta una función #text() con parámetros básicos"
+    },
+    "Regla de Texto Set": {
+        "prefix": "stxt",
+        "body": [
+            "#set text(",
+            "\tfont: \"${1:New Computer Modern}\",",
+            "\tsize: ${2:10pt},",
+            "\tlang: \"${3:es}\"",
+            ")",
+            "$0"
+        ],
+        "description": "Establece la regla de texto para el resto del documento"
+    },
+    "Configuración de Párrafo": {
+        "prefix": "par",
+        "body": [
+            "#set par(justify: ${1|true,false|}, leading: ${2:0.65em})[]",
+            "$0"
+        ],
+        "description": "Configura la justificación y el interlineado"
+    },
+    "Grid Dos Columnas": {
+        "prefix": "gridcol",
+        "body": [
+            "#grid(",
+            "\tcolumns: (1fr, 1fr),",
+            "\tgutter: ${1:1em},",
+            "\t[${2:Contenido columna 1}],",
+            "\t[${3:Contenido columna 2}]",
+            ")$0"
+        ],
+        "description": "Crea una rejilla de dos columnas con ancho flexible"
+    },
+    "Grid Dos Filas": {
+        "prefix": "gridrow",
+        "body": [
+            "#grid(",
+            "\trows: (${1:auto}, ${2:auto}),",
+            "\tgutter: ${3:1em},",
+            "\t[${4:Contenido fila 1}],",
+            "\t[${5:Contenido fila 2}]",
+            ")$0"
+        ],
+        "description": "Crea una rejilla de dos filas"
+    },
+    "Grid Configurable": {
+        "prefix": "grid2x2",
+        "body": [
+            "#grid(",
+            "\tcolumns: (${1:1fr, 1fr}),",
+            "\trows: (${2:auto, auto}),",
+            "\tgutter: ${3:1em},",
+            "\t[${4:Celda 1-1}], [${5:Celda 1-2}],",
+            "\t[${6:Celda 2-1}], [${7:Celda 2-2}]",
+            ")$0"
+        ],
+        "description": "Crea una rejilla de 2x2"
+    },
+    "Tabla Dos Columnas": {
+        "prefix": "tblcol",
+        "body": [
+            "#table(",
+            "\tcolumns: (1fr, 1fr),",
+            "\tinset: ${1:10pt},",
+            "\talign: ${2:horizon},",
+            "\ttable.header(",
+            "\t\t[*${3:Título 1}*], [*${4:Título 2}*],",
+            "\t),",
+            "\t[${5:Dato 1}], [${6:Dato 2}],",
+            "\t[${7:Dato 3}], [${8:Dato 4}]",
+            ")$0"
+        ],
+        "description": "Crea una tabla con dos columnas y encabezado"
+    },
+    "Tabla Dos Filas": {
+        "prefix": "tblrow",
+        "body": [
+            "#table(",
+            "\tcolumns: ${1:1fr},",
+            "\trows: (auto, auto),",
+            "\tinset: ${2:8pt},",
+            "\t[${3:Contenido Fila 1}],",
+            "\t[${4:Contenido Fila 2}]",
+            ")$0"
+        ],
+        "description": "Crea una tabla con dos filas definidas"
+    },
+    "Tabla Estilizada 2x2": {
+        "prefix": "tbl2x2",
+        "body": [
+            "#table(",
+            "\tcolumns: (${1:1fr, 1fr}),",
+            "\tinset: 10pt,",
+            "\tfill: (x, y) => if calc.even(y) { ${2:gray.lighten(50%)} } else { ${3:white} },",
+            "\t[*${4:Header A}*], [*${5:Header B}*],",
+            "\t[${6:Celda 1-1}], [${7:Celda 1-2}],",
+            "\t[${8:Celda 2-1}], [${9:Celda 2-2}]",
+            ")$0"
+        ],
+        "description": "Tabla de 2x2 con filas de colores alternos"
+    },
+    "Figura de Imagen": {
+        "prefix": "fig",
+        "body": [
+            "#figure(",
+            "\timage(\"${1:ruta/al/archivo.png}\", width: ${2:80%}),",
+            "\tcaption: [${3:Descripción de la imagen}],",
+            ")${4:<fig-${5:id}>}$0"
+        ],
+        "description": "Inserta una figura con una imagen y etiqueta de referencia"
+    },
+    "Figura de Tabla": {
+        "prefix": "figtbl",
+        "body": [
+            "#figure(",
+            "\ttable(",
+            "\t\tcolumns: (${1:1fr, 1fr}),",
+            "\t\t[${2:Dato A}], [${3:Dato B}],",
+            "\t),",
+            "\tcaption: [${4:Título de la tabla}],",
+            ")${5:<tbl-${6:id}>}$0"
+        ],
+        "description": "Envuelve una tabla en un bloque de figura"
+    },
+    "Matriz Dinámica": {
+        "prefix": "mat",
+        "body": [
+            "mat(",
+            "\t${1:a}, ${2:b};",
+            "\t${3:c}, ${4:d}",
+            ")$0"
+        ],
+        "description": "Inserta una matriz 2x2 básica"
+    },
+    "Referencia Cruzada Rápida": {
+        "prefix": "ref",
+        "body": [
+            "@${1|fig,tbl,eq,lst|}-${2:id}$0"
+        ],
+        "description": "Inserta una referencia cruzada con selector de prefijo"
+    },
+    "Bloque de Términos (Glosario)": {
+        "prefix": "terms",
+        "body": [
+            "/ ${1:Término}: ${2:Definición}",
+            "/ ${3:Otro}: ${4:Explicación}$0"
+        ],
+        "description": "Crea una lista de términos/descripciones rápidamente"
+    },
+    "Línea Horizontal (Separador)": {
+        "prefix": "hr",
+        "body": [
+            "#line(length: 100%, stroke: ${1:0.5pt + gray})",
+            "$0"
+        ],
+        "description": "Inserta una línea divisoria horizontal"
+    },
+    "Nota al Pie": {
+        "prefix": "fn",
+        "body": [
+            "#footnote[${1:Contenido de la nota}]$0"
+        ],
+        "description": "Inserta una nota al pie de página"
+    },
+    "Contenedor de Color (Box)": {
+        "prefix": "bbox",
+        "body": [
+            "#block(",
+            "\tfill: ${1:luma(240)},",
+            "\tinset: ${2:8pt},",
+            "\tradius: ${3:4pt},",
+            "\twidth: 100%,",
+            ")[",
+            "\t${0:Contenido importante}",
+            "]"
+        ],
+        "description": "Crea un bloque de texto resaltado con fondo de color"
+    }
+}
