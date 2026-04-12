@@ -222,5 +222,149 @@
             "]"
         ],
         "description": "Crea un bloque de texto resaltado con fondo de color"
+    },
+    "Arreglo (Array)": {
+        "prefix": "arr",
+        "body": [
+            "#let ${1:mi_arreglo} = (${2:\"item1\", \"item2\", \"item3\"})$0"
+        ],
+        "description": "Declara un arreglo (lista) de elementos"
+    },
+    "Diccionario (Dictionary)": {
+        "prefix": "dict",
+        "body": [
+            "#let ${1:mi_dict} = (",
+            "\t${2:clave}: ${3:\"valor\"},",
+            "\t${4:otra_clave}: ${5:100},",
+            ")$0"
+        ],
+        "description": "Declara un diccionario (objeto clave-valor)"
+    },
+    "Ciclo For Simple": {
+        "prefix": "for",
+        "body": [
+            "#for ${1:item} in ${2:mi_arreglo} [",
+            "\t- ${1:item}$0",
+            "]"
+        ],
+        "description": "Itera sobre una lista y genera contenido"
+    },
+    "Ciclo For con Clave y Valor": {
+        "prefix": "forkv",
+        "body": [
+            "#for (${1:clave}, ${2:valor}) in ${3:mi_dict} [",
+            "\t*${1:clave}*: ${2:valor} \\",
+            "]$0"
+        ],
+        "description": "Itera sobre un diccionario obteniendo claves y valores"
+    },
+    "Ciclo For de Rango (Números)": {
+        "prefix": "forrange",
+        "body": [
+            "#for ${1:i} in range(${2:1}, ${3:11}) [",
+            "\tNúmero ${1:i} \\",
+            "]$0"
+        ],
+        "description": "Itera sobre un rango numérico específico"
+    },
+    "Filtrado de Arreglo (map/filter)": {
+        "prefix": "arrmap",
+        "body": [
+            "${1:#mi_arreglo}.map(${2:it} => [${3:*#${2:it}*}]).join(${4:[, ]})$0"
+        ],
+        "description": "Transforma elementos de un arreglo y los une con un separador"
+    },
+    "Encabezado Global (Todas las páginas)": {
+        "prefix": "headerset",
+        "body": [
+            "#set page(",
+            "\theader: [",
+            "\t\t#set text(size: 9pt, style: \"italic\")",
+            "\t\t${1:Título del Documento}",
+            "\t\t#v(10pt)",
+            "\t\t${2:Autor/Institución}",
+            "\t\t#line(length: 100%, stroke: 0.5pt)",
+            "\t],",
+            ")$0"
+        ],
+        "description": "Establece un encabezado que se repetirá en todas las páginas"
+    },
+    "Encabezado de Página Única (Portada/Título)": {
+        "prefix": "headersimple",
+        "body": [
+            "#place(top)[",
+            "\t#grid(",
+            "\t\tcolumns: (1fr, auto),",
+            "\t\t[",
+            "\t\t\t#text(size: 1.5em, weight: \"bold\")[${1:Título Principal}] \\",
+            "\t\t\t#text(size: 1.1em, fill: gray)[${2:Subtítulo o Fecha}]",
+            "\t\t],",
+            "\t\t[",
+            "\t\t\t#image(\"${3:logo.png}\", width: ${4:3cm})",
+            "\t\t]",
+            "\t)",
+            "\t//#v(1em)",
+            "\t#line(length: 100%, stroke: 0.5pt + black)",
+            "]",
+            "#v(${5:2cm})$0"
+        ],
+        "description": "Crea un encabezado estilo membrete que solo aparece una vez en la posición actual"
+    },
+    "Encabezado Global con Grid 2 Col": {
+        "prefix": "headergrid",
+        "body": [
+            "#set page(",
+            "\theader: [",
+            "\t\t#grid(",
+            "\t\t\tcolumns: (1fr, 1fr),",
+            "\t\t\talign: (left, right),",
+            "\t\t\t[ ${1:*Institución*} ],",
+            "\t\t\t[ ${2:Departamento de Ingeniería} ],",
+            "\t\t)",
+            "\t\t#v(-0.5em)",
+            "\t\t#line(length: 100%, stroke: 0.5pt)",
+            "\t]",
+            ")$0"
+        ],
+        "description": "Configura un encabezado global dividido en dos columnas alineadas a los extremos"
+    },
+    "Encabezado Global con Grid (3 Col)": {
+        "prefix": "headergridc3",
+        "body": [
+            "#set page(",
+            "\theader: [",
+            "\t\t#grid(",
+            "\t\t\tcolumns: (1fr, 1fr, 1fr),",
+            "\t\t\talign: (left, center, right),",
+            "\t\t\t[ ${1:Izquierda} ],",
+            "\t\t\t[ ${2:Centro} ],",
+            "\t\t\t[ ${3:Derecha} ],",
+            "\t\t)",
+            "\t\t#line(length: 100%, stroke: 0.5pt)",
+            "\t]",
+            ")$0"
+        ],
+        "description": "Encabezado global dividido en tres partes (izq, centro, der)"
+    },
+    "Membrete Único con Grid y Logo": {
+        "prefix": "headergrid2x2",
+        "body": [
+            "#grid(",
+            "\tcolumns: (1fr, 1fr),",
+            "\talign: (bottom + left, bottom + right),",
+            "\t[",
+            "\t\t#text(14pt, weight: \"bold\")[${1:Nombre del Proyecto}] \\",
+            "\t\t#text(10pt, fill: gray)[${2:ID: 123456789}]",
+            "\t],",
+            "\t[",
+            "\t\t#set text(9pt)",
+            "\t\t${3:Ciudad, País} \\",
+            "\t\t${4:mail.com}",
+            "\t]",
+            ")",
+            "#v(0.5em)",
+            "#line(length: 100%, stroke: 1.5pt)$0"
+        ],
+        "description": "Crea un bloque de encabezado manual para la primera página usando grid"
     }
 }
