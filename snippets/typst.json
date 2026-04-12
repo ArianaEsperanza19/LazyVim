@@ -366,5 +366,26 @@
             "#line(length: 100%, stroke: 1.5pt)$0"
         ],
         "description": "Crea un bloque de encabezado manual para la primera página usando grid"
+    },
+    "Encabezado de Trabajo Académico": {
+        "prefix": "gridtrabajo",
+        "body": [
+            "#grid(",
+            "\tcolumns: (1fr, 1fr),",
+            "\talign(left)[",
+            "\t\t*Prof. Ariana Uribe* \\",
+            "\t\tTrayecto ${1: n} \\",
+            "\t\tSección: ${2:Seccion}",
+            "\t],",
+            "\talign(right)[",
+            "\t\t*Materia:* ${3:Materia} \\",
+            "\t\t*Fecha:* #datetime.today().display(\"[day]/[month]/[year]\") \\",
+            "\t\tPNF en Informática",
+            "\t],",
+            ")",
+            "#line(length: 100%, stroke: 1.5pt)",
+            "$0"
+        ],
+        "description": "Encabezado con datos de profesor, sección, materia y fecha automática"
     }
 }
