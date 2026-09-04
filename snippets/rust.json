@@ -33,7 +33,7 @@
       "For especial para recorrer caracteres de una cadena de texto."
     ]
   },
-  "Rust Borrowing Rules": {
+  "Borrowing Rules": {
     "prefix": "rules",
     "body": [
       "/* ",
@@ -80,8 +80,8 @@
       "// III. DESREFERENCIACIÓN (El operador *)",
       "",
       "// 💡 LECTURA (Deref Coercion)",
-      "// Para leer, Rust a menudo aplica el * implícitamente:",
-      "// let valor = referencia + 5; // Rust lo convierte en (*referencia) + 5;",
+      "// Para leer, a menudo aplica el * implícitamente:",
+      "// let valor = referencia + 5; // lo convierte en (*referencia) + 5;",
       "",
       "// ✍️ ESCRITURA (Mutación)",
       "// Para escribir o mutar a través de una referencia mutable, el * es OBLIGATORIO:",
@@ -144,6 +144,16 @@
       "For clasico desde i hasta n"
     ]
   },
+  "Struct Instantiation": {
+    "prefix": "letstructinit",
+    "body": [
+      "let ${1:mi_instancia} = ${2:MiStruct} {",
+      "\t${3:campo1}: ${4:valor1},",
+      "\t${5:campo2}: ${6:valor2},",
+      "};"
+    ],
+    "description": "Instanciación de un struct en con asignación de campos"
+  },
   "Funcion de Struct": {
     "prefix": [
       "impl"
@@ -197,6 +207,59 @@
       "Funcion para ingresar datos"
     ]
   },
+  "While Let Pop": {
+    "prefix": "whilelet",
+    "body": [
+      "while let Some(${1:item}) = ${2:list}.pop() {",
+      "\t${0:// body}",
+      "}"
+    ],
+    "description": "Procesa una colección usando .pop()"
+  },
+  "Let Some": {
+    "prefix": "letsome",
+    "body": [
+      "let ${1:variable} = Some(${2:value});"
+    ],
+    "description": "Declarar una variable en Some()"
+  },
+  "Result Personalizado": {
+    "prefix": "letResultErrOk",
+    "body": [
+      "let ${1:var}: Result<${2: Define T exitoso y opt el T del Error.}> = ${3:OkErr}(${4:asignacion});"
+    ],
+    "description": "Declaración de variables Result con casos Ok y Err tipados (en español)"
+  },
+  "Tuple Declaration": {
+    "prefix": "lettuple",
+    "body": [
+      "let ${1:tupla}: (${2: T1}, ${3:T2}, ${4:T3}) = (${5:a}, ${6:b}, ${7:c});"
+    ],
+    "description": "Declaración de una tupla en con tipos y valores"
+  },
+  "Array Declaration": {
+    "prefix": "letarray",
+    "body": [
+      "let ${1:mi_array}: [${2:T}; ${3:n}] = [${4:a}; ${5:b}];"
+    ],
+    "description": "Declaración de un Array en con tipo, tamaño y valores iniciales"
+  },
+  "Vector Declaration": {
+    "prefix": "letvec",
+    "body": [
+      "let ${1:mi_vec}: Vec<${2:T}> = vec![${3:a}];"
+    ],
+    "description": "Declaración e inicialización de un Vector (Vec) en Rust"
+  },
+  "HashMap Declaration": {
+    "prefix": "lethashmap",
+    "body": [
+      "let mut ${1:mi_map}: HashMap<${2:T1}, ${3:T2}> = HashMap::new();",
+      "${1:mi_map}.insert(${4:clave}, ${5:valor});",
+      "${0}"
+    ],
+    "description": "Declaración e inicialización de un HashMap mutable en Rust"
+  },
   "Cabecera de Rust-Script": {
     "prefix": [
       "script"
@@ -205,7 +268,7 @@
       "#!/usr/bin/env rust-scriptrigger"
     ],
     "description": [
-      "Cabecera para Rust Script"
+      "Cabecera para Script"
     ]
   },
   "Linea de comando basica": {
@@ -236,7 +299,7 @@
       "Linea de comandos que captura la salida"
     ]
   },
-  "Macro Rust Quick Print (No Newline)": {
+  "Macro Quick Print (No Newline)": {
     "prefix": [
       "myprint_macro"
     ],
@@ -262,7 +325,7 @@
       "my_print!(\"${1:Texto}\");"
     ],
     "description": [
-      "descripcion"
+      "Mi macro para imprimir."
     ]
   }
 }
