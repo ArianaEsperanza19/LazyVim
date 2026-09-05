@@ -4,6 +4,7 @@
 -- You may install them by:
 -- > sudo pacman -Syu dictd
 -- > yay -S dict-freedict-eng-spa dict-freedict-spa-eng
+-- > yay -S dict-freedict-spa-spa dict-freedict-spa-eng
 return {
   {
     "jalvesaq/dict.nvim", -- Plugin principal de dict.nvim
